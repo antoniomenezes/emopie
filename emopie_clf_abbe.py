@@ -1,6 +1,6 @@
 import os
 
-# EMOPIE classifier trained with x-enVent preprocessed dataset
+# EMOPIE classifier trained with ABBE preprocessed dataset
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -67,22 +67,17 @@ seed_everything(SEED_ALL)
 # Training Emotion Classifier
 
 # Loading preprocessed dataset
-df_train = pd.read_csv(
-    data_dir + "/" + "x-enVent_train_final.csv", sep="|", encoding="utf-8"
-)
-df_test = pd.read_csv(
-    data_dir + "/" + "x-enVent_test_final.csv", sep="|", encoding="utf-8"
+df_abbe = pd.read_csv(
+    data_dir + "/" + "ABBE_multilabel.csv", sep="|", encoding="utf-8"
 )
 
-df_train['entity_start'] = df_train['entity_start'].astype(int)
-df_train['entity_end'] = df_train['entity_end'].astype(int)
-df_train['emotion_labels'] = df_train['emotion_labels'].apply(eval)
-df_train['emotions'] = df_train['emotions'].apply(eval)
+df_abbe['emotion_count'] = df_abbe['emotion_count'].astype(int)
+df_abbe['entity_start'] = df_abbe['entity_start'].astype(int)
+df_abbe['entity_end'] = df_abbe['entity_end'].astype(int)
+df_abbe['emotion_labels'] = df_abbe['emotion_labels'].apply(eval)
+df_abbe['emotions'] = df_abbe['emotions'].apply(eval)
 
-df_test['entity_start'] = df_test['entity_start'].astype(int)
-df_test['entity_end'] = df_test['entity_end'].astype(int)
-df_test['emotion_labels'] = df_test['emotion_labels'].apply(eval)
-df_test['emotions'] = df_test['emotions'].apply(eval)
+df_train, df_test = train_test_split(df_abbe, random_state=SEED_ALL, stratify=df_abbe['emotion_count'], test_size=0.2)
 
 # Variables for training
 emotion_label_names = sorted(set([emotion for sublist in df_train['emotions'] for emotion in sublist]))
@@ -242,7 +237,7 @@ def plot_multilabel_confusion_matrix(
 
 
 # Configuration
-EPOCHS = 4
+EPOCHS = 5
 model_name = "roberta-large"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 bert_model = AutoModel.from_pretrained(model_name).to(device)
