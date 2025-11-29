@@ -53,8 +53,8 @@ pip install -r requirements.txt
 
 EMOPIE merges:
 
-1.  **Global \[CLS\] pooled output**
-2.  **Entity span embedding**
+1.  **Global \[CLS\] pooled output** (Global Context)
+2.  **Entity span embedding** (Localized Context)
 
 The representations are concatenated and passed to a multi-label
 classifier.
