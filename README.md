@@ -12,7 +12,9 @@ entities appear in the same sentence or passage.
 
 This repository contains the first public implementation of EMOPIE,
 including preprocessing, model architecture, training scripts, and
-evaluation pipeline (currently configured for the **x-enVENT** dataset).
+evaluation pipeline (the main classifier was configured for the **x-enVENT** dataset).\
+Additional code was tested with preprocessed versions of ABBE and REMAN, 
+respectively emopie_clf_abbe.py and emopie_clf_reman.py.
 
 ------------------------------------------------------------------------
 
@@ -30,6 +32,9 @@ evaluation pipeline (currently configured for the **x-enVENT** dataset).
 
     emopie/
     ├── data/
+    ├── image/
+    ├── emopie_clf_abbe.py
+    ├── emopie_clf_reman.py
     ├── emopie_clf_x_envent.py
     ├── README.md
     ├── LICENSE
@@ -83,7 +88,7 @@ Automatically performed after training.
 
 ------------------------------------------------------------------------
 
-## Metrics
+## Metrics (results are presented)
 
 -   Micro/Macro F1\
 -   Precision & Recall\
