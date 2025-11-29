@@ -1,6 +1,6 @@
 # EMOPIE
 
-### an **EMO**tion classifier from the **P**erspective of **I**ntratextual **E**ntities
+### an EMOtion classifier from the Perspective of Intratextual Entities
 
 EMOPIE is a **multi-label transformer-based classifier** designed to
 identify **emotions expressed by specific entities (experiencers)**
