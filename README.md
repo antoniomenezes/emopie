@@ -98,7 +98,7 @@ Automatically performed after training.
 
 ## Citation
 
-    Menezes, A.M.A. Moreira, V.P. EMOPIE: Emotion Classification from the Perspective of Intratextual Entities. (2025).
+    Menezes, A.M.A. Moreira, V.P. Emotion Classification from the Perspective of Intratextual Entities. (2025).
 
 ------------------------------------------------------------------------
 
