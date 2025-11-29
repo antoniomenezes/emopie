@@ -12,7 +12,7 @@ entities appear in the same sentence or passage.
 
 This repository contains the first public implementation of EMOPIE,
 including preprocessing, model architecture, training scripts, and
-evaluation pipeline---currently configured for the **x-enVENT** dataset.
+evaluation pipeline (currently configured for the **x-enVENT** dataset).
 
 ------------------------------------------------------------------------
 
