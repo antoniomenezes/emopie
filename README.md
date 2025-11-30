@@ -90,8 +90,8 @@ Automatically performed after training.
 
 ## Metrics (results are presented)
 
--   Micro/Macro F1\
--   Precision & Recall\
+-   Micro/Macro F1
+-   Precision & Recall
 -   Per-emotion results
 
 ------------------------------------------------------------------------
