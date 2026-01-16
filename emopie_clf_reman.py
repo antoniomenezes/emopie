@@ -68,7 +68,7 @@ seed_everything(SEED_ALL)
 
 # Loading preprocessed dataset
 df_reman = pd.read_csv(
-    data_dir + "/" + "REMAN_multilabel.csv", sep="|", encoding="utf-8"
+    data_dir + "/" + "REMAN_multilabel_final.csv", sep="|", encoding="utf-8"
 )
 
 df_reman['emotion_count'] = df_reman['emotion_count'].astype(int)
